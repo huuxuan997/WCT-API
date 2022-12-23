@@ -1,3 +1,4 @@
 {
-  "tesst": "git commit"
+  "tesst": "git commit",
+  "testPull": "git pull"
 }
