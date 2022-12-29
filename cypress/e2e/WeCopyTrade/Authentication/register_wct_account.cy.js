@@ -95,6 +95,7 @@ describe("Register WeCopyTrade account", () => {
         password: "vLKGWW/U71V7V1o0qB2f4Q==",
       },
     }).then((res) => {
+      cy.log(JSON.stringify(res));
       expect(res.status).to.eq(200);
       expect(res.body.statusText).to.eq(
         "Your WeCopyTrade account has been registered. Please check email to verify it."

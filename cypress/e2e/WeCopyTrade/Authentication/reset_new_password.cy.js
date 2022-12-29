@@ -57,7 +57,7 @@ describe("Reset new Password for a WCT account", () => {
         expect(respon.body.data).to.eq(null);
         cy.readFile(pathFile).then((data) => {
           console.log(data);
-          cy.writeFile(pathFile, newPW);
+          cy.writeFile(pathFile, newPW).end();
         });
       });
   });
