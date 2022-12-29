@@ -1,9 +1,7 @@
-[
-  {
-    "client_id": "wecopytrade",
-    "client_secret": "vYd2NaOeQnjh+Ow7BlV0XAIWt11lGktwGlOq36Ta5pU=",
-    "scope": "BackOfficeAPI",
-    "username": "mhxdec61@cloud-mail.top",
-    "password": "JZDLvhMFWT2RpW6m12pnEA=="
-  }
-]
+{
+  "client_id": "wecopytrade",
+  "client_secret": "vYd2NaOeQnjh+Ow7BlV0XAIWt11lGktwGlOq36Ta5pU=",
+  "scope": "BackOfficeAPI",
+  "username": "mhxdec23@drowblock.com",
+  "password": "vLKGWW/U71V7V1o0qB2f4Q=="
+}
