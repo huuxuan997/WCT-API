@@ -1,7 +1,9 @@
-{
-  "client_id": "wecopytrade",
-  "client_secret": "vYd2NaOeQnjh+Ow7BlV0XAIWt11lGktwGlOq36Ta5pU=",
-  "scope": "BackOfficeAPI",
-  "username": "mhxdec23@drowblock.com",
-  "password": "vLKGWW/U71V7V1o0qB2f4Q=="
-}
+[
+  {
+    "client_id": "wecopytrade",
+    "client_secret": "vYd2NaOeQnjh+Ow7BlV0XAIWt11lGktwGlOq36Ta5pU=",
+    "scope": "BackOfficeAPI",
+    "username": "mhxdec211@drowblock.com",
+    "password": "vLKGWW/U71V7V1o0qB2f4Q=="
+  }
+]

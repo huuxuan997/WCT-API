@@ -39,6 +39,7 @@ describe("Reset new Password for a WCT account", () => {
           username: dtlogin[0].username,
           password: respo.body.data,
         });
+        cy.wait(2000);
         cy.request({
           method: "PUT",
           url: tk[0].urlStaging + "/backoffice/api/1/User/ChangePassword",
@@ -57,7 +58,7 @@ describe("Reset new Password for a WCT account", () => {
         expect(respon.body.data).to.eq(null);
         cy.readFile(pathFile).then((data) => {
           console.log(data);
-          cy.writeFile(pathFile, newPW).end();
+          cy.writeFile(pathFile, newPW);
         });
       });
   });
