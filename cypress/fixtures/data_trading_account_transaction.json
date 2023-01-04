@@ -1,0 +1,13 @@
+[
+  {
+    "masterId": 214,
+    "bankingAccountId": 38,
+    "amount": 100
+  },
+
+  {
+    "masterId": 123123213123,
+    "bankingAccountId": 38,
+    "amount": 100
+  }
+]
