@@ -1,8 +1,8 @@
 /// <reference types = "Cypress"/>
 
-const dt = require("../../../fixtures/data.json");
 const tk = require("../../../fixtures/token.json");
 const dtlogin = require("../../../fixtures/data_login.json");
+const url = require("../../../fixtures/url.json");
 
 let token = "";
 describe("Get open order my account", () => {
@@ -10,7 +10,7 @@ describe("Get open order my account", () => {
   it("It can get open order my account successfully", () => {
     cy.request(
       "POST",
-      tk[0].urlStaging + "/authen/api/1.0/Authenticate/Login",
+      url[0].urlStaging + "/authen/api/1.0/Authenticate/Login",
       {
         client_id: "wecopytrade",
         client_secret: "vYd2NaOeQnjh+Ow7BlV0XAIWt11lGktwGlOq36Ta5pU=",

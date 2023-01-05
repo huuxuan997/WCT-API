@@ -1,12 +1,13 @@
 /// <reference types = "Cypress"/>
 
+const url = require("../../../fixtures/url.json");
 const dt = require("../../../fixtures/data.json");
 const tk = require("../../../fixtures/token.json");
 describe("Forgot passowrd", () => {
   it("Verify it can send mail when user enter correct format mail ", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
+      url: url[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
       body: {
         email: "mhxdec61@cloud-mail.top",
       },
@@ -22,7 +23,7 @@ describe("Forgot passowrd", () => {
   it("Verify receive error when mail null", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
+      url: url[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
       failOnStatusCode: false,
       body: {
         email: "",
@@ -39,7 +40,7 @@ describe("Forgot passowrd", () => {
   it("Verify receive error when user enter mail over 50 character", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
+      url: url[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
       failOnStatusCode: false,
       body: {
         email: "jklkjhkljhlkjhlkjdhflzzzxzdasdakjzzhdlkhj@gmail.com",
@@ -58,7 +59,7 @@ describe("Forgot passowrd", () => {
   it("Verify receive error when using mail invalid format ", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
+      url: url[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
       failOnStatusCode: false,
       body: {
         email: "xuanmai.mail.com",
@@ -73,7 +74,7 @@ describe("Forgot passowrd", () => {
   it("Verify receive error when using mail not exist on the system ", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
+      url: url[0].urlStaging + "/authen/api/1/Authenticate//ForgotPassword",
       failOnStatusCode: false,
       body: {
         email: "mhxtestnotexist@mail.com",

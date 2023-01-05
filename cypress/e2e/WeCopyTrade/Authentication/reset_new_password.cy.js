@@ -1,6 +1,6 @@
 /// <reference types = "Cypress"/>
 
-const dt = require("../../../fixtures/data.json");
+const url = require("../../../fixtures/url.json");
 const tk = require("../../../fixtures/token.json");
 const dtlogin = require("../../../fixtures/data_login.json");
 const dtencrytpw = require("../../../fixtures/data_encryt_pw.json");
@@ -11,7 +11,7 @@ describe("Reset new Password for a WCT account", () => {
   it("Verify It can change password successfully", () => {
     cy.request(
       "POST",
-      tk[0].urlStaging + "/authen/api/1.0/Authenticate/Login",
+      url[0].urlStaging + "/authen/api/1.0/Authenticate/Login",
       {
         client_id: dtlogin[0].client_id,
         client_secret: dtlogin[0].client_secret,
@@ -26,7 +26,7 @@ describe("Reset new Password for a WCT account", () => {
         cy.request({
           method: "POST",
           url:
-            tk[0].urlStaging +
+            url[0].urlStaging +
             "/authen/api/1.0/Authenticate/EncryptPasswordForTest?password=" +
             dtencrytpw[0].newPassword,
         });
@@ -42,7 +42,7 @@ describe("Reset new Password for a WCT account", () => {
         cy.wait(2000);
         cy.request({
           method: "PUT",
-          url: tk[0].urlStaging + "/backoffice/api/1/User/ChangePassword",
+          url: url[0].urlStaging + "/backoffice/api/1/User/ChangePassword",
           headers: {
             authorization: "Bearer " + token,
           },

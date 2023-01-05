@@ -1,5 +1,6 @@
 /// <reference types = "Cypress"/>
 
+const url = require("../../../fixtures/url.json");
 const dt = require("../../../fixtures/data.json");
 const tk = require("../../../fixtures/token.json");
 let rdText = "";
@@ -14,7 +15,7 @@ describe("Register WeCopyTrade account", () => {
   it.skip("Verify It can register a Wecopytrade account without token", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
       body: {
         FirstName: dt[0].FirstName,
         LastName: dt[0].LastName,
@@ -36,7 +37,7 @@ describe("Register WeCopyTrade account", () => {
   it.skip("Verify It only can input firstName fields not more than 50 digits", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
       failOnStatusCode: false,
       body: {
         FirstName: dt[1].FirstName,
@@ -60,7 +61,7 @@ describe("Register WeCopyTrade account", () => {
   it.skip("Verify It only can input lastName fields not more than 50 digits", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
       failOnStatusCode: false,
       body: {
         FirstName: dt[2].FirstName,
@@ -84,7 +85,7 @@ describe("Register WeCopyTrade account", () => {
   it("Verify It can input upper-case, low-case. special characters for fullName field", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
       failOnStatusCode: false,
       body: {
         FirstName: dt[3].FirstName,
@@ -106,7 +107,7 @@ describe("Register WeCopyTrade account", () => {
   it.skip("Verify phoneNumber only can input with length not more than 15", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
       failOnStatusCode: false,
       body: {
         FirstName: dt[0].FirstName,
@@ -129,7 +130,7 @@ describe("Register WeCopyTrade account", () => {
   it.skip("Verify Email field only can input with length no more than 50", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
       failOnStatusCode: false,
       body: {
         FirstName: dt[0].FirstName,
@@ -152,7 +153,7 @@ describe("Register WeCopyTrade account", () => {
   it.skip("Verify receive error when inputting incorrect email forrmat", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
       failOnStatusCode: false,
       body: {
         FirstName: dt[0].FirstName,
@@ -171,7 +172,7 @@ describe("Register WeCopyTrade account", () => {
   it.skip("Verify receive error when inputting email already exists on the system", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
       failOnStatusCode: false,
       body: {
         FirstName: dt[0].FirstName,
@@ -190,7 +191,7 @@ describe("Register WeCopyTrade account", () => {
   it.skip("Verify receive error when using invalid URL", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register/invalid",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register/invalid",
       failOnStatusCode: false,
       body: {
         FirstName: dt[0].FirstName,
@@ -207,7 +208,7 @@ describe("Register WeCopyTrade account", () => {
   it.skip("Verify receive error when any fields is empty", () => {
     cy.request({
       method: "POST",
-      url: tk[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
+      url: url[0].urlStaging + "/authen/api/1.0/Authenticate/Register",
       failOnStatusCode: false,
       body: {
         FirstName: "",
